@@ -1,0 +1,99 @@
+body {
+    font-family: 'Courier Prime';
+    font-size: 22px;
+}
+
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal .modal-content {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    max-width: 600px;
+    display: flex;
+    padding: 1em;
+    border-radius: 10px;
+
+    max-height: 400px;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.spaced {
+    justify-content: space-between;
+}
+
+.center {
+    align-items: center;
+    align-content: center;
+}
+
+.round {
+    border-radius: 100%;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input, textarea {
+    font-family: 'Courier Prime';
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    padding: 1em 1em;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
+.button {
+    border-radius: 10%;
+    cursor: pointer;
+    max-height: 2em;
+}
+
+.button:hover {
+    filter: invert(100%);
+    backdrop-filter: invert(80%);
+}
+
+.custom-button {
+    border: 2px solid mediumpurple;
+    cursor: pointer;
+    padding: 1em;
+    max-height: 4em;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.custom-button:hover {
+    background-color: mediumpurple;
+    color: white;
+}
