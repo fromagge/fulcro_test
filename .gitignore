@@ -6,6 +6,7 @@
 /.cpcache
 /.lein-*
 /out
+.idea
 /.nrepl-history
 /.nrepl-port
 .hgignore
