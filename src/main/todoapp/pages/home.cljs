@@ -11,7 +11,7 @@
   {:query         [:modal/visible? {:todo/tasks (comp/get-query TodoComponent)}]
    :ident         (fn [] [:component/id ::home-page])
    :initial-state {:modal/visible? false
-                   :todo/tasks     [{}]}}
+                   :todo/tasks     []}}
   (let [show-modal (fn [] (comp/transact! this [(open-modal {})]))]
     (dom/div {}
              (navbar-ui {})
