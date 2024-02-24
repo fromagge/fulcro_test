@@ -12,6 +12,6 @@
 (defmutation handle-create-todo-event
   [{:todo/keys [id]}]
   (action [{:keys [state]}]
-          (swap! state update-in [:component/id :todoapp.pages.home/home-page :todo/tasks] conj {:todo/id id})) ; (dispatch-fn [::open-modal])
-  (remote [env] true)) ;; this has a caveat
+          (swap! state update-in [:component/id :todoapp.pages.home/home-page :todo/tasks] conj [:todo/id id]))) ; (dispatch-fn [::open-modal])
+                                                           ;; this has a caveat
 

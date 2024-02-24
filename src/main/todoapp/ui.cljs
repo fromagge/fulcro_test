@@ -4,9 +4,8 @@
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]))
 
 (defsc Root [this {:root/keys [home-page]}]
-  {:query         [{ :root/home-page (comp/get-query HomePage)}]
+  {:query         [{:root/home-page (comp/get-query HomePage)}]
    :initial-state {:root/home-page {}}}
-
   (home-page-ui home-page))
 
 

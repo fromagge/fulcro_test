@@ -7,7 +7,7 @@
            http-kit/http-kit      {:mvn/version "2.5.3"}
            com.datomic/local      {:mvn/version "1.0.277"}}
 
- :aliases {:dev {:extra-paths ["src/dev"]
+ :aliases {:dev {:extra-paths ["src/dev" "resources"]
                  :extra-deps  {org.clojure/clojurescript {:mvn/version "1.10.914"}
                                thheller/shadow-cljs      {:mvn/version "2.16.9"}
                                binaryage/devtools        {:mvn/version "1.0.4"}

@@ -11,14 +11,14 @@
   {:query         [:modal/visible? {:todo/tasks (comp/get-query TodoComponent)}]
    :ident         (fn [] [:component/id ::home-page])
    :initial-state {:modal/visible? false
-                   :todo/tasks          []}}
+                   :todo/tasks     [{}]}}
   (let [show-modal (fn [] (comp/transact! this [(open-modal {})]))]
     (dom/div {}
              (navbar-ui {})
              (dom/div {:style {:margin "0 auto" :maxWidth 750}}
                       (ui-modal {:modal/visible? visible?})
                       (dom/div :.flex.row.spaced.center
-                               (dom/h2 "Categories")
+                               (dom/h2 "To-Dos")
                                (dom/button :.custom-button {:onClick show-modal} "Add To-Do"))
                       (dom/hr)
                       (for [task tasks]

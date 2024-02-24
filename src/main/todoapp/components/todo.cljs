@@ -6,14 +6,14 @@
 (defsc TodoComponent [this {:todo/keys [id title description]}]
   {:query         [:todo/id :todo/title :todo/description]
    :ident         :todo/id
-   :initial-state (fn [{:keys [id title description] :as params}]
-                    {:todo/id          id
-                     :todo/title       title
-                     :todo/description description})}
-
+   :initial-state {:todo/id          :param/id
+                   :todo/title       :param/title
+                   :todo/description :param/description}}
 
   (dom/div {:key id}
-           (dom/p {} (str id))))
+           (dom/p {} (str id))
+           (dom/p {} title)
+           (dom/p {} description)))
 
 
 

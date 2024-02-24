@@ -10,7 +10,9 @@
 (defsc CreateNewTodoForm [this {:todo/keys [id title description category-id]}]
   {:query         [:todo/id :todo/description :todo/title :todo/category-id]
    :ident         :todo/id
-   :initial-state (fn [params] (comp/get-initial-state TodoComponent))}
+   :initial-state (fn [{:keys [title description]}] {
+                                                     :todo/title       title
+                                                     :todo/description description})}
   (dom/div :.flex.col
            (dom/label "Title")
            (dom/input {:value       title
