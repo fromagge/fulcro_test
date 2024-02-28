@@ -1,6 +1,6 @@
 (ns todoapp.server
   (:require
-    [app.parser :refer [api-parser]]
+    [todoapp.parser :refer [api-parser]]
     [org.httpkit.server :as http]
     [com.fulcrologic.fulcro.server.api-middleware :as server]
     [ring.middleware.content-type :refer [wrap-content-type]]
@@ -15,10 +15,10 @@
 (def middleware
   (-> not-found-handler                                     ; (1)
       (server/wrap-api {:uri    "/api"
-                        :parser api-parser})                  ; (2)
+                        :parser api-parser})                ; (2)
       (server/wrap-transit-params)
       (server/wrap-transit-response)
-      (wrap-resource "public")                                ; (3)
+      (wrap-resource "public")                              ; (3)
       wrap-content-type))
 
 (defonce stop-fn (atom nil))

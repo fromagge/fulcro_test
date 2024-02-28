@@ -4,3 +4,4 @@
     [com.fulcrologic.fulcro.networking.http-remote :as http]))
 
 (defonce app (app/fulcro-app {:remotes {:remote (http/fulcro-http-remote {})}}))
+;; :client-did-mount

@@ -1,11 +1,12 @@
 (ns todoapp.parser
   (:require
-    [todoapp.resolvers :as local-resolvers]
+    [todoapp.schemas.todo :as tdschema]
+    [todoapp.mutations :as tdmutations]
     [com.wsscode.pathom.core :as p]
     [com.wsscode.pathom.connect :as pc]
     [taoensso.timbre :as log]))
 
-(def resolvers [local-resolvers/resolvers])
+(def resolvers [tdschema/resolvers tdmutations/mutations])
 
 (def pathom-parser
   (p/parser {::p/env     {::p/reader                 [p/map-reader

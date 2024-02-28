@@ -1,6 +1,6 @@
 (ns todoapp.user
   (:require
-    [app.server :as server]
+    [todoapp.server :as server]
     [clojure.tools.namespace.repl :as tools-ns :refer [set-refresh-dirs refresh]]))
 
 ;; Ensure we only refresh the source we care about. This is important
@@ -17,7 +17,7 @@
   See documentation of tools.namespace.repl for more information."
   []
   (server/stop)
-  (refresh :after 'user/start))
+  (refresh :after 'todoapp.user/start))
 
 ;; These are here so we can run them from the editor with kb shortcuts.  See IntelliJ's "Send Top Form To REPL" in
 ;; keymap settings.
